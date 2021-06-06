@@ -72,13 +72,13 @@ NOTE: Since there are python3 dependencies which can affect user workspace, it i
       
 2) Using docker docker container Tar file provided with all installed dependencies:
  
-    a) Load the docker tr file to extract the image:
+    a) Build the Docker container by running below command (Note, run the  command where you have cloned the repo)
               
-        docker load --input voucher_service.tar.gz
+        docker build -t voucher:ubuntu . 
       
     b) Run the container in detatched mode( So that falsk server wil keep running)
        
-        docker run -d  -t --name voucherDemo -p 5000:80  $imageid 
+        docker run -d  -t --name voucherDemo -p 5000:80  $imageid
         NOTE: You can check the $imageid using "docker images"
        
     c) Move inside the container to make use of dummy client:
